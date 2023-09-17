@@ -2,7 +2,7 @@ document.getElementById("startButton").addEventListener("click", startServer);
 document.getElementById("stopButton").addEventListener("click", stopServer);
 
 function startServer() {
-    fetch('https://ukhir1gwd8.execute-api.us-east-2.amazonaws.com/default/minecraft', { method: 'GET' })
+    fetch('https://cg6ykrknv4.execute-api.us-east-2.amazonaws.com/default/minecraftServerControl', { method: 'GET' })
         .then(response => response.json())
         .then(data => {
             document.getElementById("ipAddress").innerText = data.body;
@@ -13,7 +13,7 @@ function startServer() {
 }
 
 function stopServer() {
-    fetch('https://ukhir1gwd8.execute-api.us-east-2.amazonaws.com/default/minecraft', { method: 'DELETE' })
+    fetch('https://cg6ykrknv4.execute-api.us-east-2.amazonaws.com/default/minecraftServerControl', { method: 'DELETE' })
         .then(response => response.json())
         .then(data => {
             document.getElementById("ipAddress").innerText = "Not Started";
