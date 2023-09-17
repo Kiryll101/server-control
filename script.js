@@ -2,7 +2,7 @@ document.getElementById("startButton").addEventListener("click", startServer);
 document.getElementById("stopButton").addEventListener("click", stopServer);
 
 function startServer() {
-    fetch('https://cg6ykrknv4.execute-api.us-east-1.amazonaws.com/Test', { method: 'GET' })
+    fetch('https://cg6ykrknv4.execute-api.us-east-1.amazonaws.com/Test/server', { method: 'GET' })
         .then(response => response.json())
         .then(data => {
             document.getElementById("ipAddress").innerText = data.body;
@@ -13,7 +13,7 @@ function startServer() {
 }
 
 function stopServer() {
-    fetch('https://cg6ykrknv4.execute-api.us-east-1.amazonaws.com/Test', { method: 'DELETE' })
+    fetch('https://cg6ykrknv4.execute-api.us-east-1.amazonaws.com/Test/server', { method: 'DELETE' })
         .then(response => response.json())
         .then(data => {
             document.getElementById("ipAddress").innerText = "Not Started";
